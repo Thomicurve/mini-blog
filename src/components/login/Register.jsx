@@ -38,10 +38,7 @@ function Register() {
             else{
                 toast.success('Register completed!', {pauseOnFocusLoss:false})
                 return history.push("/login");
-                // return setTimeout(()=>{
-                //     history.push("/login");      //SUCCESSFUL REGISTER
-                //     window.location.reload();
-                // }, 1500);
+                                                    //SUCCESSFUL REGISTER
             }
             
             

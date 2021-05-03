@@ -1,0 +1,90 @@
+$light-blue: #66CAF2 ;
+$dark-blue: #1C1B26;
+$dark-pink: #8F265E;
+.container-posts{
+    
+    margin: 30px auto;
+    width: 85%;
+    background-color: $light-blue ;
+    border-radius: 20px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: -1;
+}
+.post-list{
+    width: 85%;
+    margin: 0px auto;
+
+}
+
+.card-posts{
+    background-color: $dark-blue;
+    margin: 30px 0px;
+    border-radius: 20px;
+    padding:20px;
+    box-sizing: content-box;
+    h5{
+        margin-bottom: 20px;
+    }
+    p{
+        padding: 0px 20px;
+        text-align: justify;
+    }
+    .final-card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+        margin: 0px auto;
+        .date{
+            color: $dark-pink;
+        }
+        span{
+            color: $light-blue;
+        }
+    }
+    
+}
+
+#delete-icon:hover{
+    color: rgb(124, 20, 20) !important;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .container-posts{
+        width: 95%;
+    }
+    .post-list{
+        width: 95%;
+    }
+
+    .icons{
+        font-size: 12px;
+    }
+
+    .card-posts{
+        margin: 20px 0px;
+        padding:15px;
+        h5{
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        p{
+            padding: 0px 20px;
+            font-size: 14px;
+        }
+        .final-card{
+            .date{
+                color: $dark-pink;
+                font-size: 12px;
+            }
+            span{
+                color: $light-blue;
+                font-size: 13px;
+            }
+        }
+        
+    }
+}

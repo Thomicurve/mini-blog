@@ -1,0 +1,75 @@
+$bg-color: #272727;
+$dark: #181818;
+.navbar{
+    background-color: $bg-color;
+    .navbar-brand{
+        color: #E6E6E6;
+        font-weight: 400;
+        font-size: 24px;
+    }
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+.drop-menu{
+    display: none;
+    background-color: $dark;
+    position: fixed;
+    left: 0px;
+    top: -25px;
+    width: 100%;
+    z-index: 50;
+    transition: all 1s ease;
+}
+
+.desktop-menu{
+    display: flex;
+}
+
+.cont{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+#button-menu{
+    display: none;
+}
+
+#icon-login{
+    color: #28a745;
+    transition: color .3s ease;
+}
+
+#icon-login:hover{
+    color: #1f7733;
+}
+
+#icon-logout{
+    color: rgb(180, 39, 39);
+    transition: color .3s ease;
+}
+#icon-logout:hover{
+    color: rgb(129, 26, 26);
+}
+
+@media screen and (max-width: 800px) {
+    .navbar{
+        position: fixed;
+    }
+    #button-menu{
+        display: block;
+    }
+    .drop-menu{
+        display: block;
+        
+    }
+    .desktop-menu{
+        display: none;
+    }
+
+}

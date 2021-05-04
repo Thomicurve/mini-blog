@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 //REQUEST
 import * as PostRequest from '../requests/RequestPost';
@@ -44,18 +44,28 @@ function EditPost() {
         
     }
 
-    const getAPost = async () => {
-        const result = await PostRequest.getAPost(id);
+    // const getAPost = useCallback(() => {
+    //     const result = PostRequest.getAPost(id);
 
-        if(result.message !== 'get post success')
-            return history.push('/');
+    //     if(result.message !== 'get post success')
+    //         return history.push('/');
 
-        setTitle(result.result.title);
-        setContent(result.result.content);
-        return;
-    }
+    //     setTitle(result.result.title);
+    //     setContent(result.result.content);
+    //     return;
+    // }, [])
 
     useEffect(() => {
+        const getAPost = async () => {
+            const result = await PostRequest.getAPost(id);
+
+            if (result.message !== 'get post success')
+                return history.push('/');
+
+            setTitle(result.result.title);
+            setContent(result.result.content);
+            return;
+        };
         getAPost();
     }, [])
 

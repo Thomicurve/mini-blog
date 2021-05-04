@@ -3,8 +3,7 @@ import axios from 'axios';
 const link = process.env.HOST || 'http://localhost:4000';
 
 const getAllPosts = async ()=>{
-    const posts = await axios.get(`${link}/posts`).
-    then(result => {
+    const posts = await axios.get(`${link}/posts`).then(result => {
         return result.data;
     }); 
     return posts;

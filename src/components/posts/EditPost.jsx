@@ -44,30 +44,20 @@ function EditPost() {
         
     }
 
-    // const getAPost = useCallback(() => {
-    //     const result = PostRequest.getAPost(id);
+    const getAPost = useCallback(() => {
+        const result = PostRequest.getAPost(id);
 
-    //     if(result.message !== 'get post success')
-    //         return history.push('/');
+        if(result.message !== 'get post success')
+            return history.push('/');
 
-    //     setTitle(result.result.title);
-    //     setContent(result.result.content);
-    //     return;
-    // }, [])
+        setTitle(result.result.title);
+        setContent(result.result.content);
+        return;
+    }, [id, history])
 
     useEffect(() => {
-        const getAPost = async () => {
-            const result = await PostRequest.getAPost(id);
-
-            if (result.message !== 'get post success')
-                return history.push('/');
-
-            setTitle(result.result.title);
-            setContent(result.result.content);
-            return;
-        };
         getAPost();
-    }, [])
+    }, [getAPost])
 
     return (
         <section className="edit-post">

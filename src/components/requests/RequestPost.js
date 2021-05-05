@@ -5,6 +5,7 @@ const link = process.env.LINK_API || 'https://mini-blog-api.herokuapp.com'; //DE
 
 const getAllPosts = async ()=>{
     const posts = await axios.get(`${link}/posts`).then(result => {
+        console.log(result.data);
         return result.data;
     }); 
     return posts;

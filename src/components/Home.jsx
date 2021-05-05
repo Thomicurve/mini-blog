@@ -21,7 +21,7 @@ function Home() {
     }
     useEffect(() => {
         getPosts();
-    }, []);
+    }, [idUser]);
     return (
         <section className="home">
             <h4 className="text-center my-3 h3">Posts</h4>

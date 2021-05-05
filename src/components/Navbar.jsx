@@ -41,8 +41,11 @@ function NavBar() {
     const getLogged = async () => {
         return await getAllPosts()
             .then(res => {
-                !res.isLogged ? setLogged(false) : setLogged(true);
-
+                if(!res.isLogged){
+                    return setLogged(false);
+                }else{
+                    return setLogged(true);
+                } 
             })
     }
 
@@ -57,7 +60,7 @@ function NavBar() {
 
     useEffect(() => {
         getLogged();
-    }, [logged])
+    }, [])
 
     return (
         <React.Fragment>

@@ -41,7 +41,7 @@ function NavBar() {
     const getLogged = async () => {
         return await getAllPosts()
             .then(res => {
-                if(!res.isLogged){
+                if(!res.idUser){
                     return setLogged(false);
                 }else{
                     return setLogged(true);

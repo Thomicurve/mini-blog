@@ -52,11 +52,8 @@ function NavBar() {
     const getLogout = async () => {
         await logout();
         toast.info('Sucessfull logout!');
-        setTimeout(() => {
-            history.push("/");
-            window.location.reload();
-            
-        }, 2000);
+        history.push("/");
+        window.location.reload();
     }
 
     useEffect(() => {
@@ -71,7 +68,7 @@ function NavBar() {
                         ? <Link to="/create-post" id="create-post" className="btn btn-outline-primary mx-2">Create a post <FontAwesomeIcon icon={faPlusSquare} className="fa-lg" /></Link>
                         : <span style={{ display: 'none' }}></span>}
                     {!logged ?
-                        <Link to="/login" className="link-login"><FontAwesomeIcon icon={faSignInAlt} className="fa-2x mx-4" id="icon-login" /></Link>
+                        <Link to="/login" className="link-login"><FontAwesomeIcon icon={faSignInAlt} className="fa-2x mx-4" id="icon-login"/></Link>
                         :
                         <Link to="/logout" className="link-login" onClick={() => { getLogout() }}><FontAwesomeIcon icon={faDoorOpen} className="fa-2x mx-4" id="icon-logout" /></Link>}
                 </div>

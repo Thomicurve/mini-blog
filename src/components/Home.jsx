@@ -24,7 +24,7 @@ function Home() {
     }, [idUser]);
     return (
         <section className="home">
-            <h4 className="text-center my-3 h3">Posts</h4>
+            <h4 className="text-center py-3 h3">Posts</h4>
             <article className="container-posts">
                 <div className="post-list">
                     {posts.map((post) => {

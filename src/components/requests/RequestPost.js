@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const link = process.env.LINK_API || 'https://mini-blog-api.herokuapp.com'; //DEPLOY
-// const link = 'http://localhost:4000'; //DEV
+// const link = process.env.LINK_API || 'https://mini-blog-api.herokuapp.com'; //DEPLOY
+const link = 'http://localhost:4000'; //DEV
 
 const getAllPosts = async ()=>{
     const posts = await axios.get(`${link}/posts`).then(result => {

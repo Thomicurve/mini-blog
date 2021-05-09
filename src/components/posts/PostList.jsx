@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 //ROUTER
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function PostList(props) {
 
@@ -41,7 +41,7 @@ function PostList(props) {
                                 <FontAwesomeIcon icon={faEdit} className="fa-lg"/>
                             </Link>
                             <span onClick={()=> requestDelete(props.post.id)} id="delete-icon" className="text-danger mx-2 icons">
-                                <FontAwesomeIcon icon={faTrash} className="fa-lg"/>
+                                <FontAwesomeIcon id="icono-borrar" icon={faTrash} className="fa-lg"/>
                             </span>
                         </div>
                         

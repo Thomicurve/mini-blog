@@ -53,8 +53,9 @@ function NavBar() {
         await logout();
         toast.info('Sucessfull logout!');
         setTimeout(() => {
+            history.push("/");
             window.location.reload();
-            history.push("/")
+            
         }, 2000);
     }
 

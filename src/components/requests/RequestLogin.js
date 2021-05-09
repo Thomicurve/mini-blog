@@ -8,7 +8,6 @@ const login = async (username, passw) =>{
         username: username,
         passw: passw
     },).then(res =>{
-        console.log(res.data);
         return res.data;
     });
 }

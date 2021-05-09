@@ -9,8 +9,6 @@ $dark-pink: #8F265E;
     border-radius: 20px;
     padding: 20px 0px;
     box-sizing: border-box;
-    position: relative;
-    z-index: -1;
 }
 .post-list{
     width: 85%;
@@ -47,7 +45,14 @@ $dark-pink: #8F265E;
     
 }
 
+#delete-icon{
+
+}
 #delete-icon:hover{
+    color: rgb(124, 20, 20) !important;
+    cursor: pointer;
+}
+#icono-borrar:hover{
     color: rgb(124, 20, 20) !important;
     cursor: pointer;
 }

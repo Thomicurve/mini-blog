@@ -34,7 +34,7 @@ function Login() {
         toast.success('Succeful login!')
             return setTimeout(()=>{
                 history.push("/");      //SUCCESSFUL LOGIN
-                // window.location.reload();
+                window.location.reload();
             }, 2000);
         
     }

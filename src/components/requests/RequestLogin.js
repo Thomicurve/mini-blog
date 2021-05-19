@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const link = process.env.LINK_API || 'http://mini-blog-api.herokuapp.com'; //DEPLOY
-// const link = 'http://localhost:4000'; //DEV
+// const link = process.env.LINK_API || 'http://mini-blog-api.herokuapp.com'; //DEPLOY
+const link = 'http://localhost:4000'; //DEV
 
 const login = async (username, passw) =>{
     return await axios.post(`${link}/login`, {

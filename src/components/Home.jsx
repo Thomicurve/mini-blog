@@ -7,6 +7,8 @@ import '../styles/home.scss';
 import * as Request from './requests/RequestPost';
 import PostList from './posts/PostList.jsx';
 
+import Cookie from 'universal-cookie'
+const cookie = new Cookie()
 function Home() {
     const [posts, setPosts] = useState([]);
     const [idUser, setIdUser] = useState(0);
@@ -15,7 +17,8 @@ function Home() {
     const getPosts = async () => {
         await Request.getAllPosts().then((res) => {
             setPosts(res.posts);
-            setIdUser(res.idUser);
+            setIdUser(parseInt(cookie.get('id_user')));
+            console.log(idUser)
         });
         
     }

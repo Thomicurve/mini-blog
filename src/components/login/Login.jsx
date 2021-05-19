@@ -10,8 +10,12 @@ import * as RequestLogin from '../requests/RequestLogin';
 //ROUTER
 import {Link, useHistory} from 'react-router-dom';
 
+import Cookie from 'universal-cookie'
+
 //STYLES
 import '../../styles/login/login.scss';
+
+const cookie = new Cookie()
 
 function Login() {
     const history = useHistory();
@@ -25,17 +29,22 @@ function Login() {
             return toast.error('Empty form');    //LOGIN ERROR
         }
 
-        const {message} = await RequestLogin.login(username, passw);
-        if(message === 'Incorrect username')
-            return toast.error(message);
-        if(message === 'Wrong password')
-            return toast.error(message);
+        await RequestLogin.login(username, passw)
+        .then(response =>{
+            const {message, idUser} = response;
+            if(message === 'Incorrect username')
+                return toast.error(message);
+            if(message === 'Wrong password')
+                return toast.error(message);
+
+            cookie.set('id_user', idUser, {path:'/'});
+        });
 
         toast.success('Succeful login!')
-            return setTimeout(()=>{
+        return setTimeout(()=>{
                 history.push("/");      //SUCCESSFUL LOGIN
                 window.location.reload();
-            }, 2000);
+        }, 2000);
         
     }
 

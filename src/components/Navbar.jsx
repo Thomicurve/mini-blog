@@ -15,8 +15,13 @@ import { logout } from './requests/RequestLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
 //STYLES
 import '../styles/nav.scss';
+
+import Cookie from 'universal-cookie'
+const cookie = new Cookie()
 
 function NavBar() {
     const history = useHistory();
@@ -41,7 +46,9 @@ function NavBar() {
     const getLogged = async () => {
         return await getAllPosts()
             .then(res => {
-                if(!res.idUser){
+                const idCookie = cookie.get('id_user');
+
+                if(!idCookie){
                     return setLogged(false);
                 }else{
                     return setLogged(true);
@@ -51,6 +58,7 @@ function NavBar() {
 
     const getLogout = async () => {
         await logout();
+        cookie.remove('id_user')
         toast.info('Sucessfull logout!');
         history.push("/");
         window.location.reload();
